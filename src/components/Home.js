@@ -6,7 +6,7 @@ class Home extends Component {
         <div>
             <h1>Home</h1>
             <p>
-            This is the homepage.
+            This is the updated homepage.
             </p>
         </div>
         );
