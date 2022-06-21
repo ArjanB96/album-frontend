@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 
-// create a homepage in react
 class Home extends Component {
     render() {
         return (
@@ -14,4 +13,3 @@ class Home extends Component {
     }
 }
 export default Home;
-
