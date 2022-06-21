@@ -22,8 +22,9 @@ jobs:
         node-version: '17.x'
     
     - name: Install dependencies
-      run: npm install
-      working-directory: album-frontend
+      run: |
+        ls -la
+        npm install
       
     - name: Build production version
       run: npm run build --if-present
