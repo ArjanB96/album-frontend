@@ -11,7 +11,7 @@ const AlbumCard = ({ id, name, artist, imageUrl }) => {
           {artist}
           <br></br>
           {name}
-          <img src={imageUrl} alt={name} />
+          <img src={imageUrl} alt="" />
         </CardMedia>
 
       </Card>
