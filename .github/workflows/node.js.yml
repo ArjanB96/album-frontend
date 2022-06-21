@@ -23,7 +23,7 @@ jobs:
     
     - name: Install dependencies
       run: npm install
-      working-directory: ./album-frontend/
+      working-directory: package.json
     
     - name: Build production version
       run: npm run build --if-present
