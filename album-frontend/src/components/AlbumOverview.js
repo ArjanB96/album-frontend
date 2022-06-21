@@ -1,37 +1,18 @@
 import React, { Component } from "react";
+import { Card, Grid } from '@material-ui/core';
+import AlbumCard from "./AlbumCard";
 
-class TransformText extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            text: "",
-            transformedText: ""
-        };
-    }
-
-    handleChange = event => {
-        this.setState({ text: event.target.value });
-    }
-
-    handleSubmit = event => {
-        event.preventDefault();
-        this.setState({ transformedText: this.state.text.toUpperCase() });
-    }
-
-    render() {
-        return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    <label>
-                        Text:
-                        <input type="text" value={this.state.text} onChange={this.handleChange} />
-                    </label>
-                    <input type="submit" value="Submit" />
-                </form>
-
-                <p>{this.state.transformedText}</p>
-            </div>
-        );
-    }
+const AlbumOverview = ({ albums }) => {
+    return (
+        <div>
+            {albums.map(album => (
+                <Grid item xs={12} sm={6} md={4} key={album.id}>
+                    <AlbumCard {...album} />
+                </Grid>
+            ))}
+        </div>
+    );
 }
-export default TransformText;
+export default AlbumOverview;
+
+
