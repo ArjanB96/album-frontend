@@ -11,7 +11,13 @@ const AlbumForm = ( ) => {
     const [name, setName] = useState(album.name || '');
     const [imageUrl, setImageUrl] = useState(album.imageUrl || '');
     const [id, setId] = useState(album.id || '');
-
+    const newAlbum = {
+        artist: artist,
+        name: name,
+        imageUrl: imageUrl,
+        id: id
+    }
+    
     const onSubmit = (e) => {
         e.preventDefault();
         const request = fetch(endpoint, {
@@ -60,13 +66,8 @@ const AlbumForm = ( ) => {
     const onChangeId = (e) => {
         setId(e.target.value);
     }
-    const newAlbum = {
-        artist: artist,
-        name: name,
-        imageUrl: imageUrl,
-        id: id
-    }
-    const handleSubmit =  (onSubmit) => {
+
+    const handleSubmit =  (newAlbum) => {
         const request = fetch(endpoint, {
             method: 'POST',
             body: JSON.stringify(newAlbum),
