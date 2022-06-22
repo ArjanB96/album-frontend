@@ -6,6 +6,7 @@ import React from 'react';
 import AlbumOverview from './components/AlbumOverview'; 
 import Home from './components/Home';
 import AlbumDetail from './components/AlbumDetail';
+import CreateAlbum from "./components/CreateAlbum";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="" element={<Home />} />
         <Route path="AlbumOverview/*" element={<AlbumOverview />} />
         <Route path="AlbumDetail/:id" element={<AlbumDetail />} />
+        <Route path="/new" element={<CreateAlbum />} />
       </Routes>
     </BrowserRouter>
   );

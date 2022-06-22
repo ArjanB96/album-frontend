@@ -7,10 +7,6 @@ exports["default"] = void 0;
 
 var _react = require("react");
 
-var _AlbumDetail = _interopRequireDefault(require("../components/AlbumDetail"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -19,12 +15,9 @@ function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) ||
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-//http://alb-album-914234631.us-east-1.elb.amazonaws.com/api/albums/1
-//http://alb-album-914234631.us-east-1.elb.amazonaws.com/api/albums/2
-//http://alb-album-914234631.us-east-1.elb.amazonaws.com/api/albums/3
-var endpoint = "".concat(process.env.REACT_APP_API_URL, "/albums/");
+var useAlbum = function useAlbum(id) {
+  var endpoint = "".concat(process.env.REACT_APP_API_URL, "/albums/").concat(id);
 
-var useAlbum = function useAlbum() {
   var _useState = (0, _react.useState)([]),
       _useState2 = _slicedToArray(_useState, 2),
       album = _useState2[0],
@@ -42,7 +35,7 @@ var useAlbum = function useAlbum() {
     }).then(function (apiResult) {
       setAlbum(apiResult);
     });
-  }, []);
+  });
   return album;
 };
 
