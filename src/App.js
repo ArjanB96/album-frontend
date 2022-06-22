@@ -5,7 +5,7 @@ import './App.css';
 import React from 'react';
 import AlbumOverview from './components/AlbumOverview'; 
 import Home from './components/Home';
-
+import AlbumDetail from './components/AlbumDetail';
 
 
 function App() {
@@ -19,7 +19,8 @@ function App() {
       </AppBar>
       <Routes>
         <Route path="" element={<Home />} />
-        <Route path="AlbumOverview" element={<AlbumOverview />} />
+        <Route path="AlbumOverview/*" element={<AlbumOverview />} />
+        <Route path="AlbumDetail/:id" element={<AlbumDetail />} />
       </Routes>
     </BrowserRouter>
   );
