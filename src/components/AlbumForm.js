@@ -1,7 +1,7 @@
 import { Card, CardContent, TextField } from '@material-ui/core'; 
 import { Button } from '@material-ui/core';
 import { useState } from 'react';
-import {Link } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 const AlbumForm = ( ) => {
     const endpoint = `${process.env.REACT_APP_API_URL}/Albums/`;
@@ -32,15 +32,9 @@ const AlbumForm = ( ) => {
             setName('');
             setImageUrl('');
             setId('');
+            Navigate('/');
         }
         ).catch(error => console.log(error));
-    }
-    // return to home page if album is submitted
-    if (album.Id) {
-        return <div>
-            <h2>Album added!</h2>
-            <Button><Link to="">Home</Link></Button>
-        </div>
     }
 
 
