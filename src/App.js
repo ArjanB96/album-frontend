@@ -14,7 +14,7 @@ function App() {
     <BrowserRouter>
       <AppBar position="static">
         <Toolbar>
-          <Link to="">Home</Link>
+          <Link to="/">Home</Link>
           <Link to="/albumoverview">AlbumOverview</Link>
         </Toolbar>
       </AppBar>
