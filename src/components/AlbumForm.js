@@ -1,7 +1,8 @@
 import { Card, CardContent, TextField } from '@material-ui/core'; 
 import { Button } from '@material-ui/core';
 import { useState } from 'react';
-import { Navigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+
 
 const AlbumForm = ( ) => {
     const endpoint = `${process.env.REACT_APP_API_URL}/Albums/`;
@@ -10,6 +11,7 @@ const AlbumForm = ( ) => {
     const [Name, setName] = useState(album.Name || '');
     const [ImageUrl, setImageUrl] = useState(album.ImageUrl || '');
     const [Id, setId] = useState(album.Id || '');
+    const navigate = useNavigate();
     const onSubmit = (e) => {
         const newAlbum = {
             Artist: Artist,
@@ -32,7 +34,7 @@ const AlbumForm = ( ) => {
             setName('');
             setImageUrl('');
             setId('');
-            Navigate('/');
+            navigate('/');
         }
         ).catch(error => console.log(error));
     }
