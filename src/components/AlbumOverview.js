@@ -9,6 +9,7 @@ const AlbumOverview = () => {
     const albums = useAlbums();
     return (
         <div>
+            <button><Link to="/new">Add Album</Link></button>
         <Grid container spacing={3}>
             {albums.map(album => (
                 <Grid item xs={12} sm={6} md={4} key={album.id}>
@@ -18,7 +19,7 @@ const AlbumOverview = () => {
         </Grid>
         <Card>
                 <CardActionArea>
-                    <button><Link to="/new">Add Album</Link></button>
+                    
                 </CardActionArea>
             </Card>
         </div>
